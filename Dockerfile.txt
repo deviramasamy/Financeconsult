@@ -1,0 +1,5 @@
+FROM pyspark:3.3.1
+
+COPY main.py /app/main.py
+
+ENTRYPOINT ["/bin/bash", "-c", "spark-submit --master $SPARK_MASTER_URL $SPARK_APPLICATION_PYTHON_LOCATION $SPARK_APPLICATION_ARGS"]
